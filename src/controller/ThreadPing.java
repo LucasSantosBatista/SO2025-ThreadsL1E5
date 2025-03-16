@@ -37,7 +37,7 @@ public class ThreadPing extends Thread {
 						System.out.println(servidor.toUpperCase() + " ping médio = " + media[1] + " ms");
 					} else if (line.contains(" ms")) {
 						String[] mostraTempo = line.split("=");
-						System.out.println(servidor.toUpperCase() + " ping médio = " + mostraTempo[mostraTempo.length - 1] + " ms");
+						System.out.println(servidor.toUpperCase() + " = " + mostraTempo[mostraTempo.length - 1] + " ms");
 					}
 				}
 				
