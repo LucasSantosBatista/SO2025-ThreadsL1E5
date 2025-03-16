@@ -29,7 +29,16 @@ public class ThreadPing extends Thread {
 				String line = "";
 
 				while ((line = reader.readLine()) != null) {
-					System.out.println(line);
+					if (line.contains("avg") && (line.contains("ms"))) {
+						String[] divideLinha = line.split("=");
+						String divideValores = divideLinha[1];
+						String[] media = divideValores.split("/");
+						
+						System.out.println(servidor.toUpperCase() + " ping médio = " + media[1] + " ms");
+					} else if (line.contains(" ms")) {
+						String[] mostraTempo = line.split("=");
+						System.out.println(servidor.toUpperCase() + " ping médio = " + mostraTempo[mostraTempo.length - 1] + " ms");
+					}
 				}
 				
 			} catch (IOException e) {
